@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS DOM Manipulation</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS DOM Manipulation</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+</body>
+<script>
+
+    //BOM Operations
+
+    // width of the browser
+    var browser_Width = window.innerWidth + "px";
+    console.log(browser_Width);
+    document.getElementById('display').innerHTML = browser_Width;
+
+    //Height of the browser
+    var browser_Height = window.innerHeight ;
+    var output = " The Browser Height is :" + browser_Height;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Open a new Tab
+    //window.open();
+
+    // DOM Properties to get body , title , URL
+    var bodyElement = document.body;
+    console.log(bodyElement);
+
+    var title = document.title;
+    console.log(title);
+    document.getElementById('display').innerHTML = title;
+
+    var url = document.url;
+    output =  url;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    //DOM Methods
+    //document.getElementById();
+    //document.getElementsByClassName();
+    //document.getElementsByTagName();
+    //document.querySelector();
+    //document.querySelectorAll();
+
+    // Access and Change the Elements
+
+    /*//goto w3schools.com and in web console execute the following
+    document.querySelector('.w3-right').innerHTML = '<h3>UI is largest site </h3>'
+
+    goto  html tutorial execute the following
+    document.querySelector('.intro').innerHTML = '<h1> Hacked by PAVAN </h1>'*/
+    // DOM Events
+
+</script>
+</html>

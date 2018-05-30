@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <style>
+
+        body{
+            font-family: "Comic Sans MS", sans-serif;
+        }
+        div{
+            background-color: lightgreen;
+            padding:10px;
+            margin: 5px;
+            border-radius: 10px;
+            width: 280px;
+        }
+        input[type='text'],input[type='password']{
+            border: solid 2px gray;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="form-div">
+        <form>
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td>
+                        <input type="text" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" id="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="submit" id="submit"
+                         onclick="login()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+<div id="result-div">
+    <p>Username : <span id="result-user"></span> </p>
+    <p>Password : <span id="result-pass"></span> </p>
+</div>
+
+<script>
+
+    function login() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        document.getElementById('result-user').innerHTML = username;
+        document.getElementById('result-pass').innerHTML = password;
+
+    }
+    //Javascript Event Handling with Event Listner
+    //get an element
+    var userNameField = document.querySelector('#username');
+    var passwordField = document.querySelector('#password');
+
+
+    //hookup an event Listner
+    userNameField.addEventListener('keyup',getUserName);
+    passwordField.addEventListener('keyup',getPassword);
+
+    //create a function for events
+    function getUserName() {
+        var username = document.getElementById('username').value;
+        document.getElementById('result-user').innerHTML = username;
+    }
+    function getPassword() {
+        var password = document.getElementById('password').value;
+        document.getElementById('result-pass').innerHTML=password;
+    }
+
+</script>
+
+</body>
+</html>

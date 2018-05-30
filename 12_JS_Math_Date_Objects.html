@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Math & Date Objects</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h2>JS Math & Date Objects Example</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+    <div style="background-color: orange">
+        <h1 id="clock"></h1>
+    </div>
+
+</body>
+
+<script>
+    /*
+        Math Object Examples
+
+     */
+
+    // Math PI and Sqrt
+    var piVal = Math.PI;
+    var output = "the PI value is : " + piVal;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+
+    // find the min of 4 numbers
+    var min_Val = Math.min(7,40,0.5,-5,70,53,90);
+    output = "The minimum value is :" +min_Val;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // find the Max of 4 numbers
+    var max_Val = Math.max(7,40,0.5,-5,70,53,90,513);
+    output = "The minimum value is :" +max_Val;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // find the 'x' to the power of 'y' value, ex: 2^4
+    var pow_Of_Num = Math.pow(2,4);
+    output = " 2^4 is : " + pow_Of_Num;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+
+    // generate the random numbers from 0 to 10000 ,, round method is to roundoff fractional part
+    // random default produce number between 0 to 1
+    var random_Num = Math.round( Math.random() * 10000);
+    output = " The Value is Random : " + random_Num;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+
+
+    /* For more details about Math Object, please have a look at
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+    */
+
+    /*
+        Date Object Examples
+
+     */
+
+    // get today's date
+    var today = new Date();
+    output = " Today is : " + today;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    //get date of the month 0 - 31 getDate()
+    output = today.getDate() + " / " + (today.getMonth()+1) + " / " + today.getFullYear();
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    //get day of the week 0 - 6 getDay()
+
+
+
+    // get full day of the week using switch statement
+
+
+    // Display a Digital Clock on the web page
+    function indianDate() {
+        var today = new Date();
+        var options = {
+          timeZone : "Asia/Kolkata"
+        };
+
+        var localTime = today.toLocaleTimeString('en-US',options);
+        document.getElementById('clock').innerHTML = localTime;
+    }
+    indianDate();
+    setInterval(indianDate,1000); // To refresh the tag for 1000ms i.e 1sec
+
+
+    /* For More Details about Date() please have a look at
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+    */
+
+</script>
+</html>
